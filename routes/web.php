@@ -10,6 +10,7 @@ use App\Http\Controllers\Web\DiseaseController;
 use App\Http\Controllers\Web\SubjectController;
 use App\Http\Controllers\Web\TestController;
 use App\Http\Controllers\Web\UserController;
+use App\Http\Controllers\Web\ValidationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -41,6 +42,9 @@ Route::group(['middleware' => ['auth:sanctum', 'verified', 'throttle:web']], fun
 
 	// Dashboard
 	Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+	
+	//Validation
+	Route::get('/validation', [ValidationController::class, 'index'])->name('validation');
 
 	//	Subjects
 	Route::get('/subjects', [SubjectController::class, 'index'])->name('subjects.index');
